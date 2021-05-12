@@ -51,7 +51,7 @@ function App() {
         </main>
       </Route>
       <Route path="/new">
-        <Form />
+        <Form setToggleFetch={setToggleFetch} />
       </Route>
     </div>
   );
