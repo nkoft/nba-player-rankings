@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Route } from "react-router-dom";
+import { Route, Router } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
+import Form from "./components/Form";
 import { baseURL, config } from "./services";
-import Players from "./components/Players";
+import Player from "./components/Players";
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -13,8 +14,12 @@ function App() {
   useEffect(() => {
     const fetchPlayerData = async () => {
       const resp = await axios.get(baseURL, config);
+      resp.data.records.sort((firstEl, secondEl) => {
+        return firstEl.fields.rank - secondEl.fields.rank;
+      });
       setPlayers(resp.data.records);
-      console.log(resp);
+
+      console.log(1111, players);
     };
     fetchPlayerData();
   }, [toggleFetch]);
@@ -25,10 +30,30 @@ function App() {
       <h1>NBA Player Rankings</h1>
       <Route exact path="/">
         <main>
-          {players.map((player) => (
-            <Players player={player} setToggleFetch={setToggleFetch} />
-          ))}
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Comments</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+              {players.map((player, index) => (
+                <Player
+                  key={index}
+                  player={player}
+                  setToggleFetch={setToggleFetch}
+                />
+              ))}
+            </tbody>
+          </table>
         </main>
+      </Route>
+      <Route path="/new">
+        <Form />
       </Route>
     </div>
   );

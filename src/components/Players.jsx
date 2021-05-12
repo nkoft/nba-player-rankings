@@ -2,9 +2,9 @@ import axios from "axios";
 import { baseURL, config } from "../services";
 import { Link } from "react-router-dom";
 
-function Players(props) {
+function Player(props) {
   const deletePlayer = async () => {
-    const specificURL = `${baseURL}/${props.players.id}`;
+    const specificURL = `${baseURL}/${props.player.id}`;
     await axios.delete(specificURL, config);
     props.setToggleFetch((curr) => !curr);
   };
@@ -12,16 +12,26 @@ function Players(props) {
   const { team, name, rank, comments } = props.player.fields;
 
   return (
-    <div>
-      <h3>{name}</h3>
-      <h4>{team}</h4>
-      <h4>{comments}</h4>
-      <h4>{rank}</h4>
-      <button onClick={deletePlayer}>Discard Player</button>
-      <Link to={`/edit/${props.player.id}`}>
-        <button>Edit Player</button>
-      </Link>
-    </div>
+    <tr>
+      <td>{rank}</td>
+      <td>{name}</td>
+      <td>{team}</td>
+      <td>{comments}</td>
+      <td>
+        <Link to={`/edit/${props.player.id}`}>Edit</Link>
+
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            if (window.confirm("Are you sure you want to delete?")) {
+              deletePlayer();
+            }
+          }}
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
   );
 }
-export default Players;
+export default Player;
