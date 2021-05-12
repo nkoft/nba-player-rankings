@@ -27,18 +27,26 @@ function Form(props) {
         setComments(player.fields.comments);
       }
     }
-  }, [props.destinations, params.id]);
+  }, [props.players, params.id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.table(rank, name, team, comments);
     // console.log(e);
-
-    await axios.post(
-      baseURL,
-      { fields: { rank, name, team, comments } },
-      config
-    );
+    if (params.id) {
+      const specificURL = `${baseURL}/${params.id}`;
+      await axios.put(
+        specificURL,
+        { fields: { rank, name, team, comments } },
+        config
+      );
+    } else {
+      await axios.post(
+        baseURL,
+        { fields: { rank, name, team, comments } },
+        config
+      );
+    }
     props.setToggleFetch((curr) => !curr);
   };
 
@@ -49,6 +57,7 @@ function Form(props) {
         <input
           type="number"
           id="rank"
+          value={rank}
           onChange={(e) => {
             const rankInt = parseInt(e.target.value);
             setRank(rankInt);
@@ -60,6 +69,7 @@ function Form(props) {
         <input
           type="text"
           id="name"
+          value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
@@ -68,6 +78,7 @@ function Form(props) {
         <input
           type="text"
           id="team"
+          value={team}
           onChange={(e) => setTeam(e.target.value)}
         />
       </div>
@@ -76,6 +87,7 @@ function Form(props) {
         <textarea
           placeholder="player notes"
           id="comments"
+          value={comments}
           onChange={(e) => setComments(e.target.value)}
         />
       </div>
