@@ -53,6 +53,9 @@ function App() {
       <Route path="/new">
         <Form setToggleFetch={setToggleFetch} />
       </Route>
+      <Route path="/edit/:id">
+        <Form players={players} setToggleFetch={setToggleFetch} />
+      </Route>
     </div>
   );
 }

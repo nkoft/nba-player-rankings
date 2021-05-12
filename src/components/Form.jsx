@@ -1,6 +1,7 @@
 import axios from "axios";
 import { baseURL, config } from "../services";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function Form(props) {
   const [rank, setRank] = useState(0);
@@ -8,10 +9,30 @@ function Form(props) {
   const [team, setTeam] = useState("");
   const [comments, setComments] = useState("");
 
+  const params = useParams();
+
+  useEffect(() => {
+    // if we're editing (we have an id), and our
+    // destinations have loaded (we have more than 0)
+    if (params.id && props.players.length) {
+      // .find() the record with an id that matches our
+      // id in params
+      const player = props.players.find((player) => player.id === params.id);
+      // if we find that record (if it exists)
+      if (player) {
+        // set the country to that record's country etc..
+        setRank(player.fields.rank);
+        setName(player.fields.name);
+        setTeam(player.fields.team);
+        setComments(player.fields.comments);
+      }
+    }
+  }, [props.destinations, params.id]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.table(rank, name, team, comments);
-    console.log(e);
+    // console.table(rank, name, team, comments);
+    // console.log(e);
 
     await axios.post(
       baseURL,
