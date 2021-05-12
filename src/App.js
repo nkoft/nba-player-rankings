@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Route, Router } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
 import Form from "./components/Form";
@@ -18,8 +18,6 @@ function App() {
         return firstEl.fields.rank - secondEl.fields.rank;
       });
       setPlayers(resp.data.records);
-
-      console.log(1111, players);
     };
     fetchPlayerData();
   }, [toggleFetch]);
