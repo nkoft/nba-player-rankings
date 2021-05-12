@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import axios from "axios";
+import { Route } from "react-router-dom";
+import "./App.css";
+import Nav from "./components/Nav";
+import { baseURL, config } from "./services";
 
 function App() {
+  useEffect(() => {
+    const fetchPlayerData = async () => {
+      const resp = await axios.get(baseURL, config);
+      console.log(resp);
+    };
+    fetchPlayerData();
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <h1>NBA Player Rankings</h1>
+      <Route exact path="/">
+        <main>
+          <h3>Player. Team. Notes. Rank</h3>
+        </main>
+      </Route>
     </div>
   );
 }
