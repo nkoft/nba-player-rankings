@@ -5,7 +5,9 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Form from "./components/Form";
 import { baseURL, config } from "./services";
-import Player from "./components/Players";
+import Main from "./components/Main";
+import { Link } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -24,31 +26,12 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <header>
+        <Nav />
+      </header>
       <h1>NBA Player Rankings</h1>
       <Route exact path="/">
-        <main>
-          <table>
-            <thead>
-              <tr>
-                <th>Rank</th>
-                <th>Name</th>
-                <th>Team</th>
-                <th>Comments</th>
-                <th>Options</th>
-              </tr>
-            </thead>
-            <tbody>
-              {players.map((player, index) => (
-                <Player
-                  key={index}
-                  player={player}
-                  setToggleFetch={setToggleFetch}
-                />
-              ))}
-            </tbody>
-          </table>
-        </main>
+        <Main players={players} setToggleFetch={setToggleFetch} />
       </Route>
       <Route path="/new">
         <Form setToggleFetch={setToggleFetch} />
@@ -56,6 +39,8 @@ function App() {
       <Route path="/edit/:id">
         <Form players={players} setToggleFetch={setToggleFetch} />
       </Route>
+      <Link to="/new">Create</Link>
+      <Footer />
     </div>
   );
 }
