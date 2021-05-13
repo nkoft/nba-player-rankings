@@ -1,6 +1,7 @@
 import axios from "axios";
 import { baseURL, config } from "../services";
 import { Link } from "react-router-dom";
+import DeleteButton from "./DeleteButton";
 
 function Player(props) {
   const deletePlayer = async () => {
@@ -20,16 +21,7 @@ function Player(props) {
       <td>
         <Link to={`/edit/${props.player.id}`}>Edit</Link>
 
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            if (window.confirm("Are you sure you want to delete?")) {
-              deletePlayer();
-            }
-          }}
-        >
-          Delete
-        </button>
+        <DeleteButton deletePlayer={deletePlayer} />
       </td>
     </tr>
   );
