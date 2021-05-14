@@ -92,18 +92,18 @@ https://airtable.com/tbl8RRi0XQnXPPj43
 
 | Component               | Priority | Estimated Time | Time Invested | Actual Time |
 | ----------------------- | :------: | :------------: | :-----------: | :---------: |
-| Airtable setup          |    H     |      1hrs      |      hr       |     hr      |
-| Initial React Setup     |    H     |      3hrs      |      hrs      |     hrs     |
-| Pseudo Code             |    H     |      1hrs      |      hr       |     hr      |
-| Populate Data/API Call  |    H     |      4hrs      |      hrs      |     hrs     |
-| Data population on page |    H     |      4hrs      |      hrs      |     hrs     |
-| Create Form Component   |    H     |      4hrs      |      hrs      |     hrs     |
-| Add Button              |    H     |      3hrs      |      hrs      |     hrs     |
-| Render new data on page |    H     |      3hrs      |      hrs      |     hrs     |
-| Data deletion button    |    H     |      3hrs      |      hr       |     hr      |
-| Components CSS          |    H     |      4hrs      |      hrs      |     hrs     |
-| Media Query CSS         |    H     |      4hrs      |      hrs      |     hrs     |
-| Total                   |    H     |     34hrs      |      hrs      |     hrs     |
+| Airtable setup          |    H     |      1hrs      |      1hr      |     hr      |
+| Initial React Setup     |    H     |      3hrs      |     2hrs      |     hrs     |
+| Pseudo Code             |    H     |      1hrs      |      1hr      |     hr      |
+| Populate Data/API Call  |    H     |      4hrs      |     3hrs      |     hrs     |
+| Data population on page |    H     |      4hrs      |     3hrs      |     hrs     |
+| Create Form Component   |    H     |      4hrs      |     5hrs      |     hrs     |
+| Add Button              |    H     |      3hrs      |     3hrs      |     hrs     |
+| Render new data on page |    H     |      3hrs      |     3hrs      |     hrs     |
+| Data deletion button    |    H     |      3hrs      |     4hrs      |     hr      |
+| Components CSS          |    H     |      4hrs      |     6hrs      |     hrs     |
+| Media Query CSS         |    H     |      4hrs      |     2hrs      |     hrs     |
+| Total                   |    H     |     34hrs      |     33hrs     |     hrs     |
 
 ## SWOT Analysis
 
