@@ -38,9 +38,10 @@ nav a {
   text-align: center;
 }
 table {
-  margin: 15px;
+  overflow: auto;
+  margin: 15px auto;
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
 }
 th,
 td {
@@ -49,6 +50,7 @@ td {
   padding: 12px 25px;
 }
 th {
+  text-align: center;
   background: #f0f4f8;
   color: #102a43;
   text-transform: uppercase;
