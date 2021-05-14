@@ -60,12 +60,10 @@ https://airtable.com/tbl8RRi0XQnXPPj43
 
 #### MVP
 
-_These are examples only. Replace with your own MVP features._
-
 - Access data through Airtable
 - Render data on page via Api Get Call
 - Allow users to post and delete data
-- Post: Allow user to create or players. They have the option of adding in comments in textArea below.
+- Post: Allow user to create or edit players. They have the option of adding in comments in textArea below.
 - User can delete field options. This is then reflected using toggleFetch.
 
 #### PostMVP
@@ -74,7 +72,7 @@ _These are examples only. Replace with your own MVP features._
 - Add second API with more data covering statistics
 - Team names could be anchors to offical team websites
 - Share with friends button for mobile
-- Additional comment section below the rankings list where fans can engage with eachother in "pleasantries".
+- Additional comment section below the rankings list where fans can engage with eachother like a message board.
 
 ## Project Schedule
 
