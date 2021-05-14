@@ -12,15 +12,10 @@ function Form(props) {
   const params = useParams();
 
   useEffect(() => {
-    // if we're editing (we have an id), and our
-    // destinations have loaded (we have more than 0)
     if (params.id && props.players.length) {
-      // .find() the record with an id that matches our
-      // id in params
       const player = props.players.find((player) => player.id === params.id);
-      // if we find that record (if it exists)
+
       if (player) {
-        // set the country to that record's country etc..
         setRank(player.fields.rank);
         setName(player.fields.name);
         setTeam(player.fields.team);
@@ -31,8 +26,7 @@ function Form(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.table(rank, name, team, comments);
-    // console.log(e);
+
     if (params.id) {
       const specificURL = `${baseURL}/${params.id}`;
       await axios.put(

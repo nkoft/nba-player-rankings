@@ -67,7 +67,6 @@ _These are examples only. Replace with your own MVP features._
 - Allow users to post and delete data
 - Post: Allow user to create or players. They have the option of adding in comments in textArea below.
 - User can delete field options. This is then reflected using toggleFetch.
--
 
 #### PostMVP
 

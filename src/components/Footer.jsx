@@ -3,7 +3,6 @@ function Footer() {
     <div className="main-footer">
       <div className="container">
         <div className="row">
-          {/* Column 1 */}
           <div className="column">
             <ul className="list">
               <li>Nick Kofteris</li>
@@ -11,7 +10,7 @@ function Footer() {
               <li>New York, NY</li>
             </ul>
           </div>
-          {/* Column 2 */}
+
           <div className="column">
             <h4>Basketball Links and References</h4>
             <ul className="list">

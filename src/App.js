@@ -29,7 +29,6 @@ function App() {
       <header>
         <Nav />
       </header>
-      <h1>NBA Player Rankings</h1>
       <Route exact path="/">
         <Main players={players} setToggleFetch={setToggleFetch} />
       </Route>
