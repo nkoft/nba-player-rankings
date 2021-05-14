@@ -124,5 +124,8 @@ textarea:focus {
   background: #ffffff;
 }
 
-@media screen {
+@media only screen and (max-width: 768px) {
+  .form-field {
+    width: 95%;
+  }
 }
