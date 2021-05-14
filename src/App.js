@@ -5,7 +5,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Form from "./components/Form";
 import { baseURL, config } from "./services";
-import Main from "./components/Main";
+import PlayerRanks from "./components/PlayerRanks";
 import { Link } from "react-router-dom";
 import Footer from "./components/Footer";
 
@@ -30,15 +30,28 @@ function App() {
         <Nav />
       </header>
       <Route exact path="/">
-        <Main players={players} setToggleFetch={setToggleFetch} />
+        <main>
+          <PlayerRanks players={players} setToggleFetch={setToggleFetch} />
+          <div className="controls">
+            <Link to="/new" className="btn-primary">
+              Add Player
+            </Link>
+          </div>
+        </main>
       </Route>
       <Route path="/new">
-        <Form setToggleFetch={setToggleFetch} />
+        <div className="form-page">
+          <h2>Add Player</h2>
+          <Form setToggleFetch={setToggleFetch} />
+        </div>
       </Route>
       <Route path="/edit/:id">
-        <Form players={players} setToggleFetch={setToggleFetch} />
+        <div className="form-page">
+          <h2>Edit Player</h2>
+          <Form players={players} setToggleFetch={setToggleFetch} />
+        </div>
       </Route>
-      <Link to="/new">Create</Link>
+
       <Footer />
     </div>
   );

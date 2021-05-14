@@ -85,7 +85,9 @@ function Form(props) {
           onChange={(e) => setComments(e.target.value)}
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" className="btn-primary">
+        Submit
+      </button>
     </form>
   );
 }

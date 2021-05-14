@@ -4,9 +4,8 @@ function Nav() {
   return (
     <nav>
       <h1>NBA Player Rankings</h1>
-      <div className="home-link">
-        <Link to="/">Home</Link>
-      </div>
+
+      <Link to="/">Home</Link>
     </nav>
   );
 }

@@ -19,7 +19,9 @@ function Player(props) {
       <td>{team}</td>
       <td>{comments}</td>
       <td>
-        <Link to={`/edit/${props.player.id}`}>Edit</Link>
+        <Link to={`/edit/${props.player.id}`} className="btn-primary">
+          Edit
+        </Link>
 
         <DeleteButton deletePlayer={deletePlayer} />
       </td>
